@@ -1,6 +1,6 @@
 # ParseChat
 
-# Lab 4 - *ParseChate*
+# Lab 4 - *ParseChat*
 
 **ParseChat** is a Chat app using an [open source Parse](http://parseplatform.org/) backend.
 

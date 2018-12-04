@@ -44,7 +44,9 @@ class LoginViewController: UIViewController {
                 self.performSegue(withIdentifier: "login", sender: nil)
                 // manually segue to logged in view
             }
-        }    }
+        }
+        
+    }
     
     
     @IBAction func login(_ sender: UIButton) {

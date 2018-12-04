@@ -25,10 +25,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //                configuration.clientKey = nil  // set to nil assuming you have not set clientKey
 //                configuration.server = "https://chattmi.herokuapp.com/parse"
             
+                
             configuration.applicationId = "CodePath-Parse"
             configuration.server = "http://45.79.67.127:1337/parse"
          
         }))
+        
+        //remember user
+        if let currentUser = PFUser.current() {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let chatViewController = storyboard.instantiateViewController(withIdentifier: "login")
+            self.window?.rootViewController = chatViewController
+            print("Welcome back \(currentUser.username!) 😀")
+        }
         // Override point for customization after application launch.
         return true
     }

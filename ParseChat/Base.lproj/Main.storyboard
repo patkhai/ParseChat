@@ -28,7 +28,7 @@
                                 <rect key="frame" x="95" y="310" width="216" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ParseChat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPI-xI-nA5">
                                 <rect key="frame" x="123" y="150" width="169" height="46"/>
@@ -85,7 +85,7 @@
         <!--Chat-->
         <scene sceneID="iKZ-aq-ReP">
             <objects>
-                <viewController storyboardIdentifier="ChatCell" id="fu8-0w-lSZ" customClass="ChatViewController" customModule="ParseChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="chatVC" id="fu8-0w-lSZ" customClass="ChatViewController" customModule="ParseChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qbR-dd-PBh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,19 +108,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="161.66666666666666"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Emoji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c46-kR-xFa">
-                                                    <rect key="frame" x="20" y="11" width="42" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="this is me" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTH-V1-lbH">
+                                                    <rect key="frame" x="10" y="58" width="394" height="75"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.2098392411612186" green="0.42850840976768478" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="highlightedColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Emoji" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c46-kR-xFa">
+                                                    <rect key="frame" x="10" y="17" width="394" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" fixedFrame="YES" text="Hello this is a test you cant lie to me" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTH-V1-lbH">
-                                                    <rect key="frame" x="20" y="45" width="274" height="104"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
+                                                    <size key="shadowOffset" width="0.0" height="0.0"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -141,9 +145,8 @@
                                     <action selector="logout:" destination="fu8-0w-lSZ" eventType="touchUpInside" id="yPM-bv-XIc"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAv-9d-D95">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message" textAlignment="center" clearsOnBeginEditing="YES" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZAv-9d-D95">
                                 <rect key="frame" x="86" y="76" width="253" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -153,11 +156,17 @@
                         <constraints>
                             <constraint firstItem="DS3-oe-jWC" firstAttribute="top" secondItem="qd0-dc-6rD" secondAttribute="top" constant="12" id="65z-mx-n27"/>
                             <constraint firstItem="BXf-wk-egO" firstAttribute="bottom" secondItem="qd0-dc-6rD" secondAttribute="bottom" id="97N-BH-4Q5"/>
+                            <constraint firstItem="ZAv-9d-D95" firstAttribute="top" secondItem="qd0-dc-6rD" secondAttribute="top" constant="12" id="EjZ-Mh-7ea"/>
+                            <constraint firstItem="ZAv-9d-D95" firstAttribute="leading" secondItem="7Y3-QJ-pty" secondAttribute="trailing" constant="18" id="Fro-Oj-Ht1"/>
                             <constraint firstItem="qd0-dc-6rD" firstAttribute="trailing" secondItem="DS3-oe-jWC" secondAttribute="trailing" constant="20" id="IEL-kJ-qnP"/>
                             <constraint firstItem="7Y3-QJ-pty" firstAttribute="top" secondItem="qd0-dc-6rD" secondAttribute="top" constant="12" id="IIM-fM-auN"/>
+                            <constraint firstItem="DS3-oe-jWC" firstAttribute="leading" secondItem="ZAv-9d-D95" secondAttribute="trailing" constant="19" id="ODJ-gI-7ZO"/>
+                            <constraint firstItem="BXf-wk-egO" firstAttribute="top" secondItem="ZAv-9d-D95" secondAttribute="bottom" constant="10" id="RFd-Mn-WCH"/>
                             <constraint firstItem="BXf-wk-egO" firstAttribute="leading" secondItem="qd0-dc-6rD" secondAttribute="leading" id="X2F-Jo-xi5"/>
                             <constraint firstItem="7Y3-QJ-pty" firstAttribute="leading" secondItem="qd0-dc-6rD" secondAttribute="leading" constant="20" id="ZIe-bs-oEZ"/>
+                            <constraint firstItem="DS3-oe-jWC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qbR-dd-PBh" secondAttribute="leading" constant="20" symbolic="YES" id="aQa-nn-d5I"/>
                             <constraint firstItem="BXf-wk-egO" firstAttribute="top" secondItem="DS3-oe-jWC" secondAttribute="bottom" constant="10" id="i51-rN-FHS"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Y3-QJ-pty" secondAttribute="trailing" constant="20" symbolic="YES" id="oth-Ae-vsF"/>
                             <constraint firstItem="BXf-wk-egO" firstAttribute="trailing" secondItem="qd0-dc-6rD" secondAttribute="trailing" id="zqh-ou-47X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qd0-dc-6rD"/>

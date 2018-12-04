@@ -22,9 +22,10 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         chatTable.dataSource = self
         chatTable.delegate = self
-        chatTable.rowHeight =  100
-//        chatTable.estimatedRowHeight = 100
-        queryMessage()
+//        chatTable.rowHeight =  100
+        chatTable.estimatedRowHeight = 100
+//        queryMessage()
+        chatTable.separatorStyle = .none
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.onTimer), userInfo: nil, repeats: true )
         // Do any additional setup after loading the view.
     }
@@ -38,6 +39,8 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let message = messages[indexPath.row]
         let chat_message = message["text"] as! String
         cell.chatMessage.text = chat_message
+        cell.chatMessage.layer.cornerRadius = 14
+        cell.chatMessage.clipsToBounds = true
         
         if let user = message["user"] as? PFUser {
             // User found! update username label with username
@@ -113,24 +116,20 @@ class ChatViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func queryMessage(){
-    
         // construct query
         let query = PFQuery(className: "Message")
         query.addDescendingOrder("createdAt")
         query.includeKey("user")
         // fetch data asynchronously
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
-            if let posts = posts {
-    
-                for message in posts{
-                    print(message["text"])
-                }
-    
-                self.messages = posts
+            if error == nil {
+                // The find succeeded.
+                self.messages = posts!
                 self.chatTable.reloadData()
-    
+                
             } else {
-                print(error!.localizedDescription)
+                // Log details of the failure
+                print("<><><><>Error: \(error?.localizedDescription)")
             }
         }
     

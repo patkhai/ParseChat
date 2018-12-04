@@ -4,7 +4,7 @@
 
 **ParseChat** is a Chat app using an [open source Parse](http://parseplatform.org/) backend.
 
-Time spent: **2** hours spent in total
+Time spent: **1** hours spent in total
 
 ## User Stories
 
@@ -39,9 +39,6 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 ![Imgur](https://i.imgur.com/QohuQk0.gif)
-
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 

@@ -10,7 +10,6 @@ Time spent: **2** hours spent in total
 
 The following **required** user stories are complete:
 
-<<<<<<< HEAD
 - [ x] User can sign up and sign in to the login screen (+1pt)
 - [ x] User sees alerts for login exceptions, i.e. "account already exists", "wrong credentials", etc. (+1pt)
 - [ x] User can compose and send chat messages (+2pt)
